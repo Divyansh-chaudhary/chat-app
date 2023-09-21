@@ -1,5 +1,5 @@
 import { MSG_TYPE } from "@/constants/message";
-import { Avatar } from "@mui/material";
+import { UserAvatarIcon } from "@/icons";
 import { useMemo } from "react";
 
 export function UserMessage({
@@ -19,7 +19,11 @@ export function UserMessage({
         isIncoming ? "" : "flex-row-reverse"
       }`}
     >
-      <Avatar>{userName}</Avatar>
+      {/* <Avatar>{userName}</Avatar> */}
+      {/* <p>{userName}</p> */}
+      <div className="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+        <UserAvatarIcon />
+      </div>
       <div
         className={`w-fit max-w-full md:max-w-[80%] p-2 rounded-lg ${
           isIncoming ? "bg-green-300" : "bg-slate-200 ml-auto"

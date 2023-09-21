@@ -1,13 +1,34 @@
-import { Avatar, Card, CardHeader } from "@mui/material";
+import { UserAvatarIcon } from "@/icons";
+import Image from "next/image";
 
-export function FriendsListItem({ no }: { no: number }) {
+export function FriendsListItem() {
   return (
-    <Card className="w-full max-w-none mt-3" sx={{ maxWidth: 345 }}>
-      <CardHeader
-        avatar={<Avatar aria-label="recipe">{no}</Avatar>}
-        title="Full name"
-        subheader="Joined at: 21 Sep 2023"
-      />
-    </Card>
+    <div className="py-3 sm:py-4">
+      <div className="flex items-center space-x-4">
+        <div className="flex-shrink-0">
+          {/* <Image
+            className="w-10 h-10 rounded"
+            src="/docs/images/people/profile-picture-5.jpg"
+            alt="Default avatar"
+            width={30}
+            height={30}
+          /> */}
+          <div className="relative w-8 h-8 overflow-hidden bg-gray-100 rounded dark:bg-gray-600">
+            <UserAvatarIcon />
+          </div>
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+            Neil Sims
+          </p>
+          <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+            email@windster.com
+          </p>
+        </div>
+        {/* <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+          $320
+        </div> */}
+      </div>
+    </div>
   );
 }

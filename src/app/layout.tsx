@@ -1,6 +1,7 @@
 import { abeezee } from "@/config/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
+import { Providers } from "@/redux/provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +15,9 @@ interface Props {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={abeezee.className}>{children}</body>
+      <body className={abeezee.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
