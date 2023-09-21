@@ -1,12 +1,18 @@
-"use client";
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 
-const Button = () => {
-  const clientFunc = () => {
-    alert("hello");
-  };
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+}
 
-  return <button onClick={clientFunc}>increase</button>;
+const Button = ({ children, className, ...props }: Props) => {
+  return (
+    <button
+      className={`bg-sky-900 py-3 px-16 rounded-sm ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
+  );
 };
 
 export default Button;
